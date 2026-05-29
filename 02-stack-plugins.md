@@ -27,7 +27,7 @@ prod sont aujourd'hui très peu nombreux ; presque tout le gameplay vit dans
 > ModelEngine, ItemsAdder, zAuctionHouse, AxTrade…) sont installés à la main côté
 > serveur et ne transitent pas par `deploy/`. `server-patch/` contient des jars du
 > stack eco historique (eco/libreforge/EcoItems/EcoScrolls) **désormais retiré du
-> gameplay** (remplacé par ItemModule/MaSurvieOutil) — à ne pas considérer comme actif.
+> gameplay** (remplacé par le module **ItemModule** de SurvivorCore) — à ne pas considérer comme actif.
 
 ---
 
@@ -91,7 +91,8 @@ préservé pour ne pas casser les API consommatrices) :
 | **Bot Discord MaSurvie** (`bot/`) | service Node.js | Bot custom (discord.js 14, Node 20+, MySQL partagée). Modules : `tickets`, `discordlink`, `reactiontracker`, `narrator`, `internal`, `autoreact`, `embeds`, `autorole`, `mcAnnounce`, `welcome`, `webhookbridge`. | Parle au plugin via HTTP/WS (CoreHttpService :25580, BotReceiver :25591). |
 | **ReactionTracker** | module bot + expansion PAPI | Points par réactions emoji Discord → `%reacttracker_*%` in-game ; 3 classements, anti-abus, paliers. | Côté bot `reactiontracker.json` ; MySQL partagée. |
 | **SurvivorPanel** (`survivor-panel/`) | service web Node.js | Panneau d'admin web (Fastify, Discord OAuth + 2FA TOTP obligatoire, RBAC, audit). Pilote bot + plugin (Pterodactyl en Phase 2). | MySQL partagée ; ne modifie jamais le code du bot. Owner Discord codé en dur. |
-| **MaSurvieOutil** | projet maison (catalogue) | Catalogue items/scrolls (30 items + 25 scrolls), remplaçant officiel du stack eco. La logique de moteur d'items a convergé vers le module **itemmodule** de SurvivorCore. | Bridges WG/RadCore/LR/TM/TimeSlot/Tier ; `/outil`, `/inscribe`. |
+
+> **MaSurvieOutil n'existe plus.** L'ancien plugin/catalogue d'items a été remplacé par le module **`itemmodule`** de SurvivorCore (voir catégorie (a) et le fichier 03). Toute la logique d'items et de scrolls vit désormais dans `itemmodule`. Ne plus référencer « MaSurvieOutil » comme un composant actif.
 
 ---
 
@@ -122,7 +123,7 @@ forkés, le dépôt ne contient que des shims / des descriptions.
 | **BlueMap** | tiers | Carte web 2D/3D du serveur. | Cible des forks BlueBridgeCore/WG. |
 | **zAuctionHouse** | premium (fork local présent) | Hôtel des ventes (HDV). | Module `pricing` lit ses prix ; **code premium non reproduit**. |
 | **AxTrade / AxAPI** | premium | Échange joueur-à-joueur (origine du module `trade`). | Module `trade` natif réimplémente `/trade` via shims AxAPI ; **code premium non reproduit**. |
-| **eco / libreforge / EcoItems / EcoScrolls** (Auxilor) | tiers (stack historique) | Ancien moteur d'items/enchants. **Retiré du gameplay** (remplacé par ItemModule/MaSurvieOutil) ; jars conservés dans `server-patch/` pour historique. | N'est plus actif. |
+| **eco / libreforge / EcoItems / EcoScrolls** (Auxilor) | tiers (stack historique) | Ancien moteur d'items/enchants. **Retiré du gameplay** (remplacé par le module **ItemModule** de SurvivorCore) ; jars conservés dans `server-patch/` pour historique. | N'est plus actif. |
 | **DiscordSRV** | tiers (legacy) | Ancien pont Discord. | Remplacé par le module `discordlink` (s'enregistre comme service si présent). |
 
 ---

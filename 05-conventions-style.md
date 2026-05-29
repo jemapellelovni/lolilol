@@ -79,7 +79,7 @@ Le préfixe global par défaut (`prefix:` dans lang_fr.yml) = `<prefix:main>`.
 
 Le serveur a **5 raretés**, alignées sur les **5 tiers d'étoiles** (1★→5★). C'est
 l'enum officielle des moteurs d'items : **`COMMUN` / `RARE` / `EPIQUE` / `LEGENDAIRE`
-/ `DIVIN`** (MaSurvieOutil `rarity:` ; majuscules, sans accent dans l'enum).
+/ `DIVIN`** (champ `rarity:` du moteur **ItemModule** ; majuscules, sans accent dans l'enum).
 
 > ⚠️ **Deux conventions de couleur de rareté coexistent dans le dépôt.** Privilégier
 > les **étoiles `<starN>`** (DA officielle 2026-05-27) pour tout nouveau contenu, et
@@ -152,7 +152,7 @@ Les **trophées** (TrophyDisplay) sont aussi des items IA uniques par joueur (so
 posables dans le monde avec hologramme FancyHolograms.
 
 ### Plages de custom_model_data (conventions observées)
-Issues du moteur **MaSurvieOutil** (le plus précis sur les CMD) :
+Issues du moteur **ItemModule** (le plus précis sur les CMD) :
 
 | Plage | Catégorie | Exemples réels |
 |---|---|---|
@@ -177,7 +177,7 @@ Le serveur mélange **deux formats** selon le sous-système — important à res
 
 - **MiniMessage + tokens DA** (`<primary>`, `<accent>`, `<#RRGGBB>`, `<gradient:…>`,
   `<bold>`) : c'est le **format des messages** (chat, titles, broadcasts, GUI récents,
-  lore MaSurvieOutil). **À utiliser pour tout nouveau message / lore moderne.**
+  lore d'items récents). **À utiliser pour tout nouveau message / lore moderne.**
 - **Codes legacy `&`** (`&6`, `&7`, `&a`, `&c`, `&l`, et hex legacy `&#RRGGBB` ou
   `§x`) : encore utilisés dans **ItemModule** (`itemmodule.yml`), les items IA, et
   quelques configs anciennes. Respecter le format **du fichier que tu édites**.
@@ -232,7 +232,7 @@ Conventions de lore observées :
   `%filter%`, `%filter_max%`, `%filter_percent%`, `%integrity%`, `%integrity_percent%`,
   `%exo_status%`, `%exo_minutes%` (cf. fichier ItemModule).
 
-Modèle de lore **moderne** (MiniMessage, MaSurvieOutil) :
+Modèle de lore **moderne** (MiniMessage, items ItemModule récents) :
 ```yaml
 display_name: "<#aaaaaa>Vodka du Stalker</#aaaaaa>"
 rarity: COMMUN
@@ -328,7 +328,7 @@ lore:
 - `deploy/configs/SurvivorCore/lang_fr.yml` — tiers de rareté RegionStats, hex legacy
 - `deploy/configs/SurvivorCore/itemmodule.yml` — lore type, glyphes, format `&` legacy, naming
 - `wiki/itemmodule/README.md` — placeholders d'usure, IDs, préfixe `im:`
-- `wiki/masurvieoutil/README.md` + `ARCHITECTURE.md` — enum rareté `COMMUN…DIVIN`, `custom_model_data` 10006 / 20013, lore MiniMessage
+- `wiki/masurvieoutil/` (doc **HISTORIQUE** — l'ex-plugin MaSurvieOutil est devenu le module `itemmodule`) — enum rareté `COMMUN…DIVIN`, `custom_model_data` 10006 / 20013, lore MiniMessage
 - `wiki/eco_stack/ecoitems_masurvie.md` + `ecoscrolls_masurvie.md` — naming `_t2`/`_legendaire`, raretés scrolls
 - `deploy/server-content/ItemsAdder/contents/masurvie/items/pied_de_biche.yml` — namespace `masurvie`, format item IA
 - `wiki/placeholders.md` — préfixes et conventions de placeholders

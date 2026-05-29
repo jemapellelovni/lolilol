@@ -59,7 +59,7 @@ hordes, territoires et convois.
    animation de fouille, pity, streaks. Le contenu dépend du tier de la zone et de
    l'équipement du joueur.
 3. **🎯 Items & scrolls** — objets puissants custom (anciennement EcoItems, désormais
-   le moteur **ItemModule**/MaSurvieOutil) et parchemins gravables via `/inscribe`.
+   le moteur **ItemModule** de SurvivorCore) et parchemins gravables via `/inscribe`.
    **Pas de table d'enchantement vanilla** : la puissance vient des scrolls.
 4. **☢ Système de radiation** — la dose (en mSv) monte en zone profonde ; sans
    protection (masque + filtre, combi NBC, exosquelette) elle devient létale (mort
