@@ -20,6 +20,7 @@ Quand tu génères du contenu pour MaSurvie : **lis d'abord [`01-vue-ensemble.md
 | 6 | [06-style-annonces-discord.md](06-style-annonces-discord.md) | **Annonces Discord** : format maison des embeds (couleurs, structure, emojis, footer), déclencheurs auto, exemples complets. |
 | 7 | [07-lore-univers.md](07-lore-univers.md) | **Lore / univers** : cadre narratif zombie, ton d'écriture, narration (Narrator/Flavortext), zones tier 0→5, grades, events spéciaux. |
 | 8 | [08-contexte-divers.md](08-contexte-divers.md) | **Contexte transverse** : emplacements de fichiers, conventions (FR, MiniMessage, DB partagée), cheat-sheet de commandes, pièges connus. |
+| 9 | [09-permissions.md](09-permissions.md) | **Permissions** : ~103 nœuds par module (avec leur défaut op/true/false). Utile pour les grades LuckPerms et savoir quelles features sont gardées. |
 
 ## ⚠️ Règle du dépôt (public)
 
