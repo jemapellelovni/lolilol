@@ -152,3 +152,22 @@ sont pas documentés comme placeholders maison de référence.
 - `masurvie_mini_core/src/main/resources/afk/config.yml` (récompenses `eco give`, affichage capsules)
 - `deploy/configs/SurvivorCore/lang_fr.yml` + `convoy/config.yml` (affichages 💊 capsules)
 - `wiki/placeholders.md` + `wiki/survivorcore/README.md` (placeholders PrimeTracker, note `%vault_eco_balance_fixed%`)
+
+---
+
+## Prime au tueur - kill PvP (MAJ 2026-05-30)
+
+Sur MaSurvie, la **prime** d'un joueur = **son solde Vault** (sa tete est mise a
+prix a hauteur de ce qu'il possede). Depuis le 2026-05-30 :
+
+- **Tuer un joueur en PvP transfere la TOTALITE de sa prime au tueur.** Le solde
+  Vault de la victime est retire puis depose chez le tueur (transfert, pas
+  creation de monnaie - neutre pour l'inflation).
+- S'applique a **tout** kill PvP, **sauf** dans les **zones blacklistees**
+  (regions WorldGuard sures : spawn, hub...), configurables.
+- Game design : **plus tu es riche, plus tu es une cible.** Garder son argent sur
+  soi devient risque -> incite a depenser/deposer vite et a tendre des embuscades
+  sur les gros soldes. Coherent avec le leaderboard du top prime (PrimeTracker).
+
+Implementation : module PrimeTracker, section config `prime-tracker.payout`
+(`enabled`, `percentage`, `min-amount`, `notify`, `blacklist-regions`).
