@@ -472,3 +472,17 @@ Commandes : `/eventhub status` / `reload` / `progress <joueur> <TYPE> [montant]`
 - **Timezone** : `Europe/Paris` par défaut, pilote schedules + créneaux + resets leaderboards.
 - **Hooks tiers en réflexion** quand c'est un plugin premium/externe (zAuctionHouse, AxTrade,
   FancyHolograms, ItemsAdder) — pas de `compileOnly`, dégradation gracieuse si absent.
+
+---
+
+## MAJ 2026-05-30 - Placeholders zone courante (bossbar)
+
+Nouveaux placeholders PAPI no-arg : ils resolvent la region WG courante du joueur
+puis exposent ses attributs/stats (thin wrappers sur la logique per-region) :
+- survivorcore : zone_display / zone_tier / zone_stars / zone_lore / zone_theme
+  (source : plugins/SurvivorCore/zones.yml, registre central des zones WG :
+  display, tier 0-5, theme couleur, lore)
+- regionstats : zone_players / time_here / mobkills_here / playerkills_here
+- lootregion  : chests_here
+- territory   : here_is_owned / here_owner / here_owned_since / here_capture_active / here_capture_info
+Pour piloter une bossbar CustomNameplates zone sans liste de regions en dur.
